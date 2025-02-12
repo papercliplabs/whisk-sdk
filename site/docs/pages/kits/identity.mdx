@@ -1,4 +1,4 @@
-import { Name, Avatar, IdentityResolver } from "@paperclip-labs/whisk-sdk/identity";
+import { Name, Avatar, Profile, IdentityResolver } from "@paperclip-labs/whisk-sdk/identity";
 import { Button } from 'vocs/components'
 
 # Identity Kit [Seamlessly integrate web3 avatars, usernames and profiles into your app.]
@@ -49,8 +49,7 @@ const examples = [
 ```
 :::
 
-{/* TODO: Removed the profile card for now... */}
-{/* :::code-group 
+:::code-group 
 
 <div data-title="preview">
     <div className="flex gap-2 w-full items-center justify-center">
@@ -63,7 +62,7 @@ import { Profile } from "@paperclip-labs/whisk-sdk/identity";
 
 <Profile address="0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045" />
 ```
-::: */}
+:::
 
 Supported resolvers:
 - [ENS](https://ens.domains/)
@@ -191,8 +190,6 @@ import { Avatar } from "@paperclip-labs/whisk-sdk/identity";
 :::
 
 
-{/* TODO: Removed the profile card for now... */}
-{/* 
 ### Profile
 
 The profile for an address.
@@ -214,7 +211,7 @@ import { Profile } from "@paperclip-labs/whisk-sdk/identity";
 | --------- | ---- | -------- | ----------- |
 | `address` | `Address` | Yes | Address to resolve. |
 | `resolverOrder` | [`IdentityResolver[]`](#identityresolver) | No | Override the default resolvers set in the [`WhiskSdkProvider` config](#configuration). |
-| `className` | `string` | No | Custom CSS class names. | */}
+| `className` | `string` | No | Custom CSS class names. |
 
 
 ## Hooks
@@ -249,8 +246,7 @@ const { data: avatar, isLoading } = useAvatar({ address: "0xd8dA6BF26964aF9D7eEd
 | `address` | `Address` | Yes | Address to resolve. |
 | `resolverOrder` | [`IdentityResolver[]`](#identityresolver) | No | Override the default resolvers set in the [`WhiskSdkProvider` config](#configuration). |
 
-{/* TODO: Removed the profile card for now... */}
-{/* ### useProfile
+### useProfile
 
 ```tsx twoslash
 import { useProfile } from "@paperclip-labs/whisk-sdk/identity";
@@ -261,7 +257,7 @@ const { data: profile, isLoading } = useProfile({ address: "0xd8dA6BF26964aF9D7e
 | Props | Type | Required | Description |
 | --------- | ---- | -------- | ----------- |
 | `address` | `Address` | Yes | Address to resolve. |
-| `resolverOrder` | [`IdentityResolver[]`](#identityresolver) | No | Override the default resolvers set in the [`WhiskSdkProvider` config](#configuration). | */}
+| `resolverOrder` | [`IdentityResolver[]`](#identityresolver) | No | Override the default resolvers set in the [`WhiskSdkProvider` config](#configuration). |
 
 
 ## GraphQL

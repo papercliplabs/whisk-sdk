@@ -34,7 +34,13 @@ export function AvatarUi({ address, size, avatar, className, ...props }: AvatarU
       }}
       {...props}
     >
-      <div className="w-full h-full absolute inset-0" style={{ background: getLinearGradientForAddress(address) }} />
+      <div
+        className={clsx(
+          "w-full h-full absolute inset-0 transition-opacity delay-300",
+          isLoaded ? "opacity-0" : "opacity-100"
+        )}
+        style={{ background: getLinearGradientForAddress(address) }}
+      />
       {avatar && (
         <img
           src={avatar}
@@ -42,7 +48,7 @@ export function AvatarUi({ address, size, avatar, className, ...props }: AvatarU
           width={size}
           height={size}
           className={clsx(
-            "absolute left-0 top-0 transition-opacity duration-300 w-full h-full",
+            "absolute inset-0 object-cover transition-opacity duration-300 w-full h-full",
             isLoaded ? "opacity-100" : "opacity-0"
           )}
           onLoad={() => setIsLoaded(true)}

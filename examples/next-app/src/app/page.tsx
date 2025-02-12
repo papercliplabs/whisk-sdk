@@ -1,7 +1,7 @@
 "use client";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount } from "wagmi";
-import { Name, Avatar, useName, useAvatar } from "@paperclip-labs/whisk-sdk/identity";
+import { Name, Avatar, useName, useAvatar, Profile } from "@paperclip-labs/whisk-sdk/identity";
 import { zeroAddress } from "viem";
 
 export default function Home() {
@@ -21,12 +21,11 @@ export default function Home() {
             <Avatar address={address} size={32} />
             <Name address={address} />
           </div>
-          {/* <Profile address={address} /> */}
+          <Profile address={address} />
         </>
       )}
       {name}
       {avatar}
-      {/* {JSON.stringify(profile)} */}
     </div>
   );
 }
